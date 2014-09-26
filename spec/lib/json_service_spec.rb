@@ -19,12 +19,18 @@ describe Service do
   end
 
   describe "#treat_input" do
-    it "removes extra whitespace from the string" do
-      output = @service.treat_input
-      expect(output).not_to eq(@txt)
+    it "converts double spaces to hyphens" do
+      result = @service.treat_input('Cupcake  ipsum dolor sit')
+      expect(result).to eq('Cupcake--ipsum dolor sit')
     end
+  end
 
-  end  
+  describe "#treat_output" do
+    it "converts a hyphen to whitespace" do
+      result = @service.treat_output('Cupcake--ipsum-dolor-sit')
+      expect(result).to eq('Cupcake ipsum-dolor-sit')
+    end
+  end
 
   describe "#accept_input" do
     before :all do
