@@ -12,7 +12,9 @@ Requires the `json` gem:
 ## Running the service
 To use the service, run the Ruby script:
 
-    ruby lib/json-service.rb
+    ruby lib/json_service.rb
+
+View in the browser at `http://localhost:4567`.
 
 ## Running the tests
 Initialize RSpec:
