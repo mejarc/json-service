@@ -23,7 +23,7 @@ class Service
 
   # Convert double hyphen back to space
   def treat_output(output)
-    output.gsub(/-/, ' ')
+    output.gsub(/--/, ' ')
   end
 
   # creates a hash to hold the original
@@ -40,24 +40,16 @@ class Service
     }
     tmp
   end
-
-  def save_json(txt)
-    # f = File.open('../libs/input.json')
-    # f.write(txt)
-    # f.close
-  end
 end
 
 get '/' do
   erb :form
 end
 
-get '/input.json' do
-  content_type :json
-end
-
 post '/form' do
-  service = Service.new(params[:textInput].to_s)
+  content_type :json
+  service = Service.new(params)
   # JSON save/recover
+  service.to_json
   redirect back
 end
