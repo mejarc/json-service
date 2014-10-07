@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
 
-gem "json"
-gem "rspec"
+gem 'sinatra'
+gem 'shotgun'
+gem 'json'
+gem 'rspec'
