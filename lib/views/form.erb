@@ -1,9 +1,9 @@
-<form action="/form" method="post">
+<form action="/form" id="inputForm" method="post">
   <ol>
         <li>
-          <label for="textInput">Enter some text to process:</label>
-          <textarea name="textInput" id="textInput" cols="30" rows="10"></textarea></li>
+          <label for="original">Enter some text to process:</label>
+          <textarea name="original" cols="30" rows="10"></textarea></li>
         <li><input type="submit"></li>
       </ol>
-      <div id="results"></div>
 </form>
+    <div id="result"><%=  %></div>

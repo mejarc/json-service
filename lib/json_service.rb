@@ -43,13 +43,11 @@ class Service
 end
 
 get '/' do
-  erb :form
+  erb :form, :layout => true
 end
 
-post '/form' do
-  content_type :json
-  service = Service.new(params)
-  # JSON save/recover
-  service.to_json
-  redirect back
+post '/form'  do
+  service = Service.new(params[:original])
+  result = service.accept_input
+  halt 200, result.to_json
 end
